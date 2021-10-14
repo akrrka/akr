@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "apiVersion": "2021-02-01",
+    "parameters": {
+        "vnet_Name": {
+            "defaultValue": "ARMtest",
+            "type": "string"
+        },
+        "geoloc": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        }
+    },
+    "functions": [],
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('vnet_Name')]",
+            "location": "[parameters('geoloc')]"
+
+        }
+    ]
+} 
